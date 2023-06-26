@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title_content %} Listado de departamentos {% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col col-4">
+            <ul class="list-group">
+                {% for d in departments %}
+                    <li class="list-group-item">
+                        <a href="/locations/departamentos/{{ d }}">
+                            {{ d }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

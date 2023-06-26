@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title_content %} 
+    Listado de ciudades por Depatamento
+    <br/ >
+    {{ department }}
+{% endblock %}
+{% block content %}
+    {% if display %}
+        <a href="{% url 'locations:departamentos' %}">
+            volver
+        </a>
+        <div class="row">
+            <div class="col col-4">
+                <ul class="list-group"> 
+                    {% for c in cities %}
+                        <li class="list-group-item">
+                            <a href="/locations/departamentos/{{ department }}/{{ c }}">
+                                {{ c }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            No existen registros para mostrar
+        </div>
+    {% endif %}
+{% endblock %}
