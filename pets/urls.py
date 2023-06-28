@@ -8,12 +8,13 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from pets.views import MascotaViewSet, EspecieViewSet, ObservacionViewSet
+from pets.views import MascotaViewSet, EspecieViewSet, ObservacionViewSet, PersonaViewSet
 
 router = DefaultRouter()
 router.register('mascotas', MascotaViewSet, basename='mascotas')
-# router.register('especies', EspecieViewSet, basename='especies')
+router.register('especies', EspecieViewSet, basename='especies')
 router.register('observacion', ObservacionViewSet, basename='observacion')
+router.register('persona', PersonaViewSet, basename='persona')
 
 app_name = "pets"
 urlpatterns = [

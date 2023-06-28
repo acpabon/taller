@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Mascot, Specie, Observation
+from .models import Mascot, Specie, Observation, Person
 
 class EspecieSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,4 +14,9 @@ class MascotaSerializer(serializers.ModelSerializer):
 class ObservacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observation
+        fields = '__all__'
+
+class PersonaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
         fields = '__all__'
