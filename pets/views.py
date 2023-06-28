@@ -8,7 +8,7 @@ from .serializers import MascotaSerializer, EspecieSerializer, ObservacionSerial
 class MascotaViewSet(viewsets.ModelViewSet):
     queryset = Mascot.objects.all()
     serializer_class = MascotaSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 class EspecieViewSet(viewsets.ModelViewSet):
     queryset = Specie.objects.all()
