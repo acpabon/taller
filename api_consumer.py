@@ -13,7 +13,7 @@ print('mascotas - data', data)
 
 url = 'http://127.0.0.1:8000/api/observacion/'
 
-r = requests.get(url)
+r = requests.get(url, auth=('admin', 'admin'))
 code = r.status_code
 print('observacion - code', code)
 
